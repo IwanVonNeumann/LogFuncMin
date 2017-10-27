@@ -1,4 +1,5 @@
 import math
+import random
 
 
 def get_func_order(output_number):
@@ -22,3 +23,11 @@ def get_truth_table(outputs):
 def get_true_inputs(output):
     truth_table = get_truth_table(output)
     return [x[0] for x in truth_table if x[1] == 1]
+
+
+def generate_func_output(order, threshold=0.5):
+    return [bernoulli_random(threshold) for i in range(2 ** order)]
+
+
+def bernoulli_random(p):
+    return 1 if random.random() < p else 0
