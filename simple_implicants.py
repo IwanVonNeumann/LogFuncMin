@@ -1,16 +1,13 @@
-def group_terms(inputs):
-    grouped = {}
-    for x in inputs:
-        i = x.count("1")
-        if grouped.get(i) is None:
-            grouped[i] = [x]
-        else:
-            grouped[i].append(x)
-    keys = sorted(grouped.keys())
-    result = []
-    for key in keys:
-        result.append(grouped[key])
-    return result
+import collections
+
+
+def group_terms(terms):
+    grouped = collections.defaultdict(list)
+    weights = [x.count("1") for x in terms]
+    for weight, term in zip(weights, terms):
+        grouped[weight].append(term)
+    sorted_keys = sorted(grouped.keys())
+    return [grouped[k] for k in sorted_keys]
 
 
 def combine_groups(grouped_terms):
