@@ -7,7 +7,8 @@ def group_terms(terms):
     for weight, term in zip(weights, terms):
         grouped[weight].append(term)
     sorted_keys = sorted(grouped.keys())
-    return [grouped[k] for k in sorted_keys]
+    sorted_groups = [grouped[k] for k in sorted_keys]
+    return sorted_groups
 
 
 def combine_groups(grouped_terms):
