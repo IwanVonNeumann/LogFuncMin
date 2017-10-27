@@ -2,7 +2,7 @@ from log_utils import get_true_inputs
 from matrix_coverage import get_implicant_matrix, print_implicant_matrix
 from simple_implicants import list_simple_implicants
 
-func_output_code = [0, 0, 1, 0, 1, 1, 0, 0]
+func_output_code = [1, 0, 1, 0, 1, 1, 0, 0]
 print(func_output_code)
 
 true_inputs = get_true_inputs(func_output_code)
