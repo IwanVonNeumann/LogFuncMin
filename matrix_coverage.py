@@ -81,17 +81,17 @@ def find_coverages_with_min_rank(coverages):
 
 def find_coverages_with_min_weight(coverages, criterion):
     grouped_coverages = group_coverages(coverages, criterion=criterion)
-    min_weight = min(grouped_coverages, key=grouped_coverages.get)
+    min_weight = min(grouped_coverages)
     return grouped_coverages[min_weight]
 
 
 def solve_by_min_length(simple_implicants, true_inputs, log=False):
     coverages = list_all_coverages(simple_implicants, true_inputs)
     if log:
-        print("All coverages:")
-        for c in coverages:
-            print(c)
-        print()
+        # print("All coverages:")
+        # for c in coverages:
+        #     print(c)
+        # print()
         grouped_coverages = group_coverages_by_length(coverages)
         print("Grouped coverages:")
         for k in grouped_coverages:
@@ -109,10 +109,10 @@ def solve_by_min_length(simple_implicants, true_inputs, log=False):
 def solve_by_min_rank(simple_implicants, true_inputs, log=False):
     coverages = list_all_coverages(simple_implicants, true_inputs)
     if log:
-        print("All coverages:")
-        for c in coverages:
-            print(c)
-        print()
+        # print("All coverages:")
+        # for c in coverages:
+        #     print(c)
+        # print()
         grouped_coverages = group_coverages_by_rank(coverages)
         print("Grouped coverages:")
         for k in grouped_coverages:
