@@ -8,9 +8,6 @@ def solve_with_nice_output(func_output_code, log=False):
     simple_implicants = list_simple_implicants(true_inputs)
     implicant_matrix = get_implicant_matrix(simple_implicants, true_inputs)
 
-    min_length_coverages = solve_by_min_length(simple_implicants, true_inputs, log=log)
-    min_rank_coverages = solve_by_min_rank(simple_implicants, true_inputs, log=log)
-
     if log:
         print("Function outputs code:")
         print(func_output_code)
@@ -27,5 +24,8 @@ def solve_with_nice_output(func_output_code, log=False):
         print("Implicant matrix:")
         print_implicant_matrix(simple_implicants, true_inputs, implicant_matrix)
         print()
+
+    min_length_coverages = solve_by_min_length(simple_implicants, true_inputs, log=log)
+    min_rank_coverages = solve_by_min_rank(simple_implicants, true_inputs, log=log)
 
     return min_length_coverages, min_rank_coverages
